@@ -1,0 +1,694 @@
+/* =========================
+   BRAND VARIABLES
+   ========================= */
+:root {
+  --primary-blue: #0a3d91;
+  --accent-yellow: #f2c400;
+
+  --bg-main: #f5f7fa;
+  --bg-white: #ffffff;
+  --bg-dark: #0e1a2b;
+
+  --border-soft: #e1e6ee;
+  --text-dark: #0b0b0b;
+  --text-muted: #555;
+}
+
+/* =========================
+   RESET
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+   ========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg-main);
+  background: #0b1626;
+  color: var(--text-dark);
+  line-height: 1.7;
+  padding-top: 110px;
+}
+
+
+
+/* =========================
+   PARTICLES FULL PAGE
+========================= */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.contact-hero {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 10px;
+}
+
+/* Softer background */
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(242, 196, 0, 0.08),
+    transparent 60%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.contact-hero h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #f2c400, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Softer background */
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(242, 196, 0, 0.08),
+    transparent 60%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.contact-hero p {
+  opacity: 0.8;
+  letter-spacing: 2px;
+  font-size: 15px;
+  margin-top: 0;
+  color: #f5f7fa;
+}
+
+.contact-hero p {
+  opacity: 0.8;
+  letter-spacing: 2px;
+  font-size: 15px;
+  margin-top: 0;
+  color: #f5f7fa;
+}
+
+
+/* =========================
+   GLASS FORM
+========================= */
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 60px;
+  border-radius: 24px;
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  transition: 0.4s ease;
+}
+
+.contact-form-wrapper:hover {
+  box-shadow: 0 50px 100px rgba(242, 196, 0, 0.15);
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #f2c400;
+  box-shadow: 0 0 15px rgba(242, 196, 0, 0.3);
+}
+
+.input-group label {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  color: #aaa;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:valid + label,
+.input-group textarea:valid + label {
+  top: -10px;
+  left: 14px;
+  font-size: 11px;
+  background: #0b1626;
+  padding: 0 6px;
+  color: #f2c400;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: linear-gradient(45deg, #f2c400, #ffdf6e);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(242, 196, 0, 0.4);
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact-section {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 120px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   CONTACT INFO (RICH STYLE)
+========================= */
+
+.contact-info h2 {
+  font-size: 34px;
+  margin-bottom: 45px;
+  background: linear-gradient(90deg, #f2c400, #ffdf6e, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Card style for each item */
+.info-item {
+  position: relative;
+  padding: 20px 20px 20px 24px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #f2c400;
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+}
+
+/* Glow hover effect */
+.info-item:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(242, 196, 0, 0.15);
+}
+
+/* Small title */
+.info-item h4 {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #f2c400;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Main content */
+.info-item p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Optional subtle divider glow */
+.info-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #f2c400, transparent);
+  opacity: 0.6;
+}
+
+
+
+
+/* =========================
+   MAP
+========================= */
+.map-section iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25d366;
+  color: #fff;
+  font-size: 26px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+
+  animation: bounceIn 1s ease, pulse 2s infinite 1s;
+}
+
+/* Bounce entry */
+@keyframes bounceIn {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Pulse */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.notif {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+
+/* =========================
+   GLOBAL RESPONSIVE FIX
+========================= */
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TABLET (≤1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  body {
+    padding-top: 90px;
+  }
+
+  .contact-hero h1 {
+    font-size: 36px;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 80px 30px;
+  }
+
+  .contact-form-wrapper {
+    padding: 40px;
+  }
+
+}
+
+/* =========================
+   MOBILE (≤768px)
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 80px;
+  }
+
+    /* NAVBAR */
+  .navbar {
+    height: 70px;
+    padding: 0 16px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  /* NAV PANEL */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 120px 40px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+  .contact-hero {
+    padding: 30px 15px;
+  }
+
+  .contact-hero h1 {
+    font-size: 28px;
+  }
+
+  .contact-hero p {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .contact-section {
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .info-item p {
+    font-size: 14px;
+  }
+
+  .contact-form-wrapper {
+    padding: 25px;
+    border-radius: 18px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .map-section iframe {
+    height: 280px;
+  }
+
+  .whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE (≤480px)
+========================= */
+@media (max-width: 480px) {
+
+  .contact-hero h1 {
+    font-size: 22px;
+  }
+
+  .contact-hero p {
+    font-size: 12px;
+  }
+
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .contact-form-wrapper {
+    padding: 20px;
+  }
+
+  .input-group {
+    margin-bottom: 25px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   HAMBURGER MENU SYSTEM
+========================================= */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none; /* hide normal nav */
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 28px;
+    height: 20px;
+
+    cursor: pointer;
+    z-index: 1200;
+  }
+
+  .menu-toggle span {
+    height: 2px;
+    width: 100%;
+    background: #0a3d91;
+    border-radius: 2px;
+    transition: 0.4s ease;
+  }
+
+  /* Animate to X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* ================= NAV TRAY ================= */
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    padding: 90px 20px 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: rgba(10, 15, 28, 0.95);
+    backdrop-filter: blur(15px);
+
+    transform: translateY(-100%); /* 🔥 hidden above */
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 1100;
+  }
+
+  /* ACTIVE */
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  /* ================= LINKS ================= */
+
+  .nav-links a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: 0.4s ease;
+  }
+
+  /* STAGGER */
+  .nav-links.active a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links.active a:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav-links.active a:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+  .nav-links.active a:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  .nav-links.active a:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+  .nav-links.active a:nth-child(5) {
+    transition-delay: 0.3s;
+  }
+
+  /* ================= DROPDOWN FIX ================= */
+
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+  }
+  display: flex;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+  z-index: 900;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+

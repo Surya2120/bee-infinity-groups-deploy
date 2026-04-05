@@ -1,0 +1,212 @@
+document.addEventListener("DOMContentLoaded", function(){
+
+  
+const form = document.getElementById("contact-form");
+const submitBtn = document.querySelector(".submit-btn");
+const btnText = document.querySelector(".btn-text");
+const loader = document.querySelector(".loader");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // UI loading
+  btnText.style.display = "none";
+  loader.style.display = "inline-block";
+  submitBtn.style.pointerEvents = "none";
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    message: form.message.value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbzyEpagQaJLVrsJGWFGGcf1P-3CripF7nZcmoKI_YFTTvA-OlowqlXfCCMlBnWmgk5LSg/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    form.reset();
+
+    btnText.innerHTML = "✔ Sent";
+    btnText.style.display = "inline";
+    loader.style.display = "none";
+
+    setTimeout(() => {
+      btnText.innerHTML = "Send Message";
+      submitBtn.style.pointerEvents = "auto";
+    }, 3000);
+  })
+  .catch(() => {
+    alert("Error sending message");
+
+    btnText.style.display = "inline";
+    loader.style.display = "none";
+    submitBtn.style.pointerEvents = "auto";
+  });
+});
+
+/* =====================================================
+   2️⃣ CINEMATIC TYPING EFFECT
+===================================================== */
+const textElement = document.getElementById("typing-text");
+const text = "Let’s Build Something Legendary";
+
+let index = 0;
+textElement.textContent = ""; // CLEAR FIRST
+
+function typeEffect() {
+  if (index < text.length) {
+    textElement.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 50);
+  }
+}
+
+typeEffect();
+
+/* ===============================
+   PREMIUM PARTICLES (Opposite Cursor)
+================================= */
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+const numberOfParticles = 200;
+
+let mouse = {
+  x: null,
+  y: null
+};
+
+window.addEventListener("mousemove", function(e){
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
+
+window.addEventListener("resize", function(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
+});
+
+class Particle {
+  constructor(){
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 1;
+    this.baseX = this.x;
+    this.baseY = this.y;
+    this.speedX = Math.random() * 0.3 - 0.15;
+    this.speedY = Math.random() * 0.3 - 0.15;
+  }
+
+  update(){
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    // Opposite cursor movement
+    if(mouse.x && mouse.y){
+      let dx = this.x - mouse.x;
+      let dy = this.y - mouse.y;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+
+      if(distance < 150){
+        let force = (150 - distance) / 150;
+        this.x += dx * force * 0.08;
+        this.y += dy * force * 0.08;
+      }
+    }
+
+    // Wrap edges
+    if(this.x > canvas.width) this.x = 0;
+    if(this.x < 0) this.x = canvas.width;
+    if(this.y > canvas.height) this.y = 0;
+    if(this.y < 0) this.y = canvas.height;
+  }
+
+  draw(){
+ctx.fillStyle = "rgba(242,196,0,0.4)";
+ctx.shadowColor = "#f2c400";
+ctx.shadowBlur = 10;
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function initParticles(){
+  particlesArray = [];
+  for(let i = 0; i < numberOfParticles; i++){
+    particlesArray.push(new Particle());
+  }
+}
+
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  for(let i = 0; i < particlesArray.length; i++){
+    particlesArray[i].update();
+    particlesArray[i].draw();
+  }
+
+
+  requestAnimationFrame(animate);
+}
+
+initParticles();
+animate();
+
+/* =====================================================
+   4️⃣ 3D TILT EFFECT ON FORM
+===================================================== */
+const formWrapper = document.querySelector(".contact-form-wrapper");
+
+formWrapper.addEventListener("mousemove", (e) => {
+  const rect = formWrapper.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+
+  const rotateX = -(y - centerY) / 25;
+  const rotateY = (x - centerX) / 25;
+
+  formWrapper.style.transform =
+    `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
+formWrapper.addEventListener("mouseleave", () => {
+  formWrapper.style.transform =
+    "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+});
+
+
+/* =====================================================
+   5️⃣ MAGNETIC BUTTON EFFECT
+===================================================== */
+submitBtn.addEventListener("mousemove", function(e){
+  const rect = submitBtn.getBoundingClientRect();
+  const x = e.clientX - rect.left - rect.width/2;
+  const y = e.clientY - rect.top - rect.height/2;
+
+  submitBtn.style.transform = 
+    `translate(${x*0.2}px, ${y*0.2}px)`;
+});
+
+submitBtn.addEventListener("mouseleave", function(){
+  submitBtn.style.transform = "translate(0,0)";
+});
+
+});
+
+
+
+
