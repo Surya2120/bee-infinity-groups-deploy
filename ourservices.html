@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Services | Bee Infinity Groups</title>
+
+<meta name="description" content="Bee Infinity Groups offers film editing, recording studio, reel editing, dance choreography and event services in Bangalore.">
+<meta name="keywords" content="video editing Bangalore, recording studio Bangalore, reel editing, dance classes, event management Bee Infinity Groups">
+<meta name="author" content="Bee Infinity Groups">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Our Services | Bee Infinity Groups">
+<meta property="og:description" content="Creative media, dance & event solutions for films, brands and businesses.">
+<meta property="og:image" content="assets/images/logo/studiozlogo.webp">
+<meta property="og:type" content="website">
+
+<!-- Performance -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/ourservices.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/favicon.webp">
+
+<header class="navbar">
+<div class="logo">
+<a href="index.html" class="logo-btn">
+<img src="assets/images/logo/studiozlogo.webp" alt="Bee Infinity Groups Logo" loading="lazy">
+</a>
+<div class="logo-text">
+<span class="brand-name">Bee Infinity Groups</span>
+<span class="brand-sub">STUDIOZ</span>
+</div>
+</div>
+
+<nav class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="divisions.html">Divisions</a>
+<a href="gallery.html">Gallery</a>
+<a href="careers.html">Careers</a>
+<a href="ourservices.html" class="active">Our Services</a>
+
+<div class="dropdown">
+<a href="#" id="exploreToggle" class="no-close">Explore ▾</a>
+<div class="dropdown-menu" id="exploreMenu">
+<a href="merchlaunchingsoon.html">Our Merch</a>
+<a href="AnnouncingSoon.html">BOTD</a>
+<a href="bigcinemaz.html">Big Cinemaz</a>
+</div>
+</div>
+
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+<section class="hero reveal">
+<h1>Our Services</h1>
+<p>Creative Media, Dance & Event Solutions for Films, Brands and Businesses</p>
+</section>
+
+<section class="service-section reveal">
+<div class="container">
+<div class="service-text">
+<h2>Film & Video Post Production</h2>
+<p>Complete post production solutions for films, YouTube creators and brands.</p>
+<ul>
+<li>Video Editing</li><li>Film Editing</li><li>Short Film Editing</li>
+<li>Film Dubbing</li><li>Short Film Dubbing</li>
+<li>D.I Color Grading</li><li>Animation</li>
+<li>Complete Film Post Production</li>
+</ul>
+<button onclick="openForm('Film Post Production')">Enquire Now</button>
+</div>
+<div class="service-image tilt">
+<img src="assets/images/ourservices/post.webp" alt="Film Editing Service" loading="lazy">
+</div>
+</div>
+</section>
+
+<section class="poster-section reveal">
+<div class="poster-container">
+<div class="poster-text">
+<h2>Recording Studio</h2>
+<p>Professional recording studio for voice, dubbing and music sessions.</p>
+<button onclick="openForm('Recording Studio')">Book Studio – ₹349 / hour</button>
+</div>
+<div class="poster-image tilt">
+<img src="assets/images/ourservices/recording.webp" alt="Recording Studio" loading="lazy">
+</div>
+</div>
+</section>
+
+<section class="poster-section reveal">
+<div class="poster-container reverse">
+<div class="poster-text">
+<h2>Reel Editing Service</h2>
+<p>Professional Instagram Reel editing for influencers and businesses.</p>
+<button onclick="openForm('Reel Editing')">Start From ₹499</button>
+</div>
+<div class="poster-image tilt">
+<img src="assets/images/ourservices/reeledit.webp" alt="Reel Editing" loading="lazy">
+</div>
+</div>
+</section>
+
+<section class="service-section reveal">
+<div class="container">
+<div class="service-text">
+<h2>Dance & Choreography</h2>
+<ul>
+<li>Dance Choreography</li><li>Personal Training</li>
+<li>Regular Classes</li><li>Online Classes</li>
+<li>Apartment Classes</li><li>School & College Choreography</li>
+</ul>
+<button onclick="openForm('Dance Classes')">Join Classes</button>
+</div>
+<div class="service-image tilt">
+<img src="assets/images/ourservices/dance.webp" alt="Dance Classes" loading="lazy">
+</div>
+</div>
+</section>
+
+<section class="service-section reveal">
+<div class="container reverse">
+<div class="service-text">
+<h2>Event Services</h2>
+<ul>
+<li>Photography</li><li>Videography</li>
+<li>Costume Rental</li><li>Decoration</li>
+<li>Complete Event Setup</li><li>Corporate Events</li>
+</ul>
+<button onclick="openForm('Event Services')">Book Event</button>
+</div>
+<div class="service-image tilt">
+<img src="assets/images/ourservices/decor.webp" alt="Event Services" loading="lazy">
+</div>
+</div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-box">
+<span class="close" onclick="closeForm()">×</span>
+<h3>Service Enquiry</h3>
+<input type="text" id="name" placeholder="Your Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<input type="text" id="serviceName">
+<textarea id="details" placeholder="Project Details"></textarea>
+<button onclick="sendEmail()">Submit</button>
+<div class="whatsapp" onclick="whatsappBooking()">Book via WhatsApp</div>
+</div>
+</div>
+
+<footer class="footer-modern">
+<div class="footer-bg"></div>
+<div class="footer-overlay"></div>
+
+<div class="footer-container">
+<div class="footer-left">
+<h2 class="footer-big-title">Bee <span>Infinity</span> Groups</h2>
+<p class="footer-tagline">CINEMATIC EXPERIENCES • EVENTS • DANCE</p>
+</div>
+
+<div class="footer-right">
+<h4>GET IN TOUCH</h4>
+<p>For enquiries, collaborations, or questions, connect with us.</p>
+<a href="contact.html" class="footer-btn">Contact Us</a>
+</div>
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 Bee Infinity Groups</span>
+</div>
+</footer>
+
+<button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="js/global.js" defer></script>
+<script src="js/ourservices.js" defer></script>
+
+<script>
+emailjs.init("RrB7lYG1wswiJ8sqT");
+</script>
+
+</body>
+</html>

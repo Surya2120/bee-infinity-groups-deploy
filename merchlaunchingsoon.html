@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merch Launching Soon</title>
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #0a0f1c, #05070d);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 52px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+.whatsapp-btn {
+  padding: 14px 26px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   FLOATING ICONS
+========================= */
+.floating-icons span {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.15;
+  animation: float 10s infinite ease-in-out;
+}
+
+.icon1 { top: 10%; left: 15%; }
+.icon2 { top: 20%; right: 10%; }
+.icon3 { bottom: 20%; left: 20%; }
+.icon4 { bottom: 15%; right: 15%; }
+.icon5 { top: 40%; left: 5%; }
+.icon6 { bottom: 10%; left: 50%; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #f2c400;
+  border-radius: 50%;
+  animation: particleMove 10s linear infinite;
+}
+
+@keyframes particleMove {
+  0% { transform: translateY(100vh); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.particles span:nth-child(1){ left:10%; animation-delay:0s;}
+.particles span:nth-child(2){ left:30%; animation-delay:2s;}
+.particles span:nth-child(3){ left:50%; animation-delay:4s;}
+.particles span:nth-child(4){ left:70%; animation-delay:1s;}
+.particles span:nth-child(5){ left:90%; animation-delay:3s;}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .hero h1 { font-size: 32px; }
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/favicon.webp">
+
+<a href="index.html" class="back-btn">← Home</a>
+
+<!-- PARTICLES -->
+<div class="particles">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- FLOATING ICONS -->
+<div class="floating-icons">
+  <span class="icon1">👕</span>
+  <span class="icon2">🧢</span>
+  <span class="icon3">🎒</span>
+  <span class="icon4">👟</span>
+  <span class="icon5">🧥</span>
+  <span class="icon6">👖</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+  <h1>MERCH LAUNCHING SOON</h1>
+  <p>Something exclusive is coming from Bee Infinity Groups</p>
+
+  <h3>Contact Us on WhatsApp</h3>
+
+  <!-- WHATSAPP BUTTON -->
+  <a 
+    href="https://wa.me/919739710942?text=Hi%20Bee%20Infinity%20Groups,%20I%20am%20interested%20in%20your%20merch.%20Please%20update%20me."
+    class="whatsapp-btn"
+    target="_blank"
+  >
+    Chat on WhatsApp
+  </a>
+
+</div>
+
+</body>
+</html>
